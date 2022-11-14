@@ -12,15 +12,20 @@ export class ProductsService {
     constructor(private http: HttpClient) { }
     private productUrl = "/api/products"
 
-    getProducts() {
+    findall() {
         return this.http.get<IProduct[]>(this.productUrl)
             .pipe(catchError(this.handleError))
     }
 
-    getProduct(id: number) {
+    findone(id: number) {
         return this.http.get<IProduct>(`${this.productUrl}/${id}`)
             .pipe(catchError(this.handleError))
 
+    }
+
+    remove(id: number) {
+        return this.http.delete<IProduct>(`${this.productUrl}/${id}`)
+            .pipe(catchError(this.handleError))
     }
 
     private handleError(err: HttpErrorResponse): Observable<never> {

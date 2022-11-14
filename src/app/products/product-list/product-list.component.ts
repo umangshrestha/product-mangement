@@ -43,7 +43,7 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.sub = this.service.getProducts().subscribe({
+    this.sub = this.service.findall().subscribe({
       next: (products: IProduct[]) => {
         this.products = this.filteredProducts = products
       },

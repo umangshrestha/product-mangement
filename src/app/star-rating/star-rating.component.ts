@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'product-star-rating',
+  selector: 'star-rating',
   templateUrl: './star-rating.component.html',
   styleUrls: ["./start-rating.component.scss"],
 })
@@ -17,6 +17,8 @@ export class StarRatingComponent implements OnChanges {
     this.cropWidth = this.rating * 75 / 5;
   }
 
-  onClick(): void { }
+  onClick(): void { 
+    this.ratingClicked.emit(`Rating {this.rating} was clicked`)
+  }
 
 }

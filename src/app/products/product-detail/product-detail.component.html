@@ -1,53 +1,52 @@
 <div class='card'>
     <div class='card-header'>
-      {{title + ': ' + product?.name}}
+        {{title + ': ' + product?.id}}
     </div>
-  
+
     <div class='card-body' *ngIf='product'>
-      <div class='row'>
-        <div class='col-md-8'>
-          <div class='row'>
-            <div class='col-md-4'>Name:</div>
-            <div class='col-md-8'>{{product.name}}</div>
-          </div>
-          <div class='row'>
-            <div class='col-md-4'>Code:</div>
-            <div class='col-md-8'>{{product.code}}</div>
-          </div>
-          <div class='row'>
-            <div class='col-md-4'>Description:</div>
-            <div class='col-md-8'>{{product.description}}</div>
-          </div>
-          <div class='row'>
-            <div class='col-md-4'>Availability:</div>
-            <div class='col-md-8'>{{product.releaseDate}}</div>
-          </div>
-          <div class='row'>
-            <div class='col-md-4'>Price:</div>
-            <div class='col-md-8'>{{product.price}}</div>
-          </div>
-          <div class='row'>
-            <div class='col-md-4'>Rating:</div>
+        <div class='row'>
             <div class='col-md-8'>
-              <product-star-rating [rating]='product.rating || 0'>
-              </product-star-rating>
+                <div class='row'>
+                    <div class='col-md-4'>Name:</div>
+                    <div class='col-md-8'>{{product.name}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-4'>Code:</div>
+                    <div class='col-md-8'>{{product.code}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-4'>Description:</div>
+                    <div class='col-md-8'>{{product.description}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-4'>Availability:</div>
+                    <div class='col-md-8'>{{product.releaseDate}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-4'>Price:</div>
+                    <div class='col-md-8'>{{product.price}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-4'>Rating:</div>
+                    <div class='col-md-8'>
+                        <star-rating [rating]='product.rating || 0'>
+                        </star-rating>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <div class='col-md-4'>
+                <img class='center-block img-responsive' [src]='product.imageUrl' [title]='product.name'>
+            </div>
         </div>
-  
-        <div class='col-md-4'>
-          <img class='center-block img-responsive'
-               [src]='product.imageUrl'
-               [title]='product.name'>
-        </div>
-      </div>
     </div>
-  
+
     <div class='card-footer'>
-      <button class='btn btn-outline-secondary'
-              style='width:80px'
-              (click)='onBack()'>
-        <i class='fa fa-chevron-left'></i> Back
-      </button>
+        <button id="back" class='btn btn-outline-secondary' (click)='onBack()'>
+            <i class='fa fa-chevron-left'></i> Back
+        </button>
+        <button class='btn btn-danger'  (click)='onDelete()'>
+            delete
+        </button>
     </div>
-  </div>
+</div>
