@@ -1,6 +1,6 @@
 <div class='card'>
     <div class='card-header'>
-        {{title + ': ' + product?.id}}
+        {{title + ': ' + product?.name}}
     </div>
 
     <div class='card-body' *ngIf='product'>
@@ -12,7 +12,7 @@
                 </div>
                 <div class='row'>
                     <div class='col-md-4'>Code:</div>
-                    <div class='col-md-8'>{{product.code}}</div>
+                    <div class='col-md-8'>{{product.code| uppercase}}</div>
                 </div>
                 <div class='row'>
                     <div class='col-md-4'>Description:</div>
@@ -24,12 +24,12 @@
                 </div>
                 <div class='row'>
                     <div class='col-md-4'>Price:</div>
-                    <div class='col-md-8'>{{product.price}}</div>
+                    <div class='col-md-8'>{{product.price| currency: 'USD': 'symbol'}}</div>
                 </div>
                 <div class='row'>
                     <div class='col-md-4'>Rating:</div>
                     <div class='col-md-8'>
-                        <star-rating [rating]='product.rating || 0'>
+                        <star-rating [rating]='product.rating'>
                         </star-rating>
                     </div>
                 </div>

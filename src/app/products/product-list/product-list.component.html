@@ -40,9 +40,9 @@
                                 {{ product.name }}
                             </a>
                         </td>
-                        <td>{{ product.code}}</td>
+                        <td>{{ product.code | uppercase}}</td>
                         <td>{{ product.releaseDate }}</td>
-                        <td>{{ product.price }}</td>
+                        <td>{{ product.price | currency: 'USD': 'symbol'}}</td>
                         <td>
                             <star-rating [rating]='product.rating'></star-rating>
                         </td>

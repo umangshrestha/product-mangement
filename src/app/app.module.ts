@@ -7,10 +7,12 @@ import { ProductsModule } from './products/products.module';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data/in-memory-data.service';
+import { ConvertToSpaces } from './shared/pipe/convert-to-spaces.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ConvertToSpaces
   ],
   imports: [
     BrowserModule,
